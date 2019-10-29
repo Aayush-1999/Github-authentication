@@ -1,0 +1,116 @@
+<% include ./partials/header %>
+
+<div class="container">
+    <div class="form-width  mt-3">
+        <div class="card animated fadeInDown">
+          <div class="card-content">
+            <span class="card-title"><p class="form-title">Sign Up</p></span>
+          </div>
+          <div class="card-tabs">
+            <ul class="tabs tabs-fixed-width">
+              <li class="tab"><a href="#login" class="active">Login</a></li>
+              <li class="tab"><a href="#signup">Register</a></li>
+            </ul>
+          </div>
+          <div class="card-content">
+            <div id="login">
+                <form action="/login" method="POST" class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="email" type="email" name="email" class="validate">
+                      <label for="email">Email</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12 ">
+                      <input id="password" type="password" name="password" class="validate">
+                      <label for="password">Password</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field center col s12">
+                      <button class="waves-effect waves-light btn-large">
+                        Login
+                      </button>
+                    </div>
+                  </div>
+                  <h6 class="center">OR</h6>
+                  <div class="row">
+                    <div class="input-field  center col s12 m12 l6">
+                      <a class="waves-effect waves-light btn-large grey darken-4" href="/auth/github" >
+                        <i class="material-icons left">
+                            <img src="/images/Github-Mark.png" alt="github-icon" class="button-image">
+                        </i>
+                        Github
+                      </a>
+                    </div>
+                    <div class="input-field  center col s12 m12 l6 ">
+                      <a class="waves-effect waves-light btn-large indigo darken-1" href="/auth/linkedin">
+                        <i class="material-icons left">
+                          <img src="/images/Linked-in-logo.png" class="linkedin-image" alt="linkedin-icon" >
+                        </i>
+                        LinkedIn
+                      </a>
+                    </div>
+                  </div>
+                </form>
+                  
+            </div>
+            <div id="signup">  
+              <form action="/register" method="POST" class="col s12">
+                <div class="row">
+                  <div class="input-field col s12 m6">
+                    <input  id="first_name" type="text" name="firstname" class="validate" required >
+                    <label for="first_name">First Name</label>
+                  </div>
+                  <div class="input-field col s12 m6">
+                    <input id="last_name" type="text" name="lastname" class="validate" required>
+                    <label for="last_name">Last Name</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="email" type="email" name="email" class="validate" required>
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12 ">
+                    <input id="password" type="password" name="password" class="validate" required>
+                    <label for="password">Password</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-field center col s12">
+                    <button class="waves-effect waves-light btn-large">
+                      Sign Up
+                    </button>
+                  </div>
+                  </div>
+                <h6 class="center">OR</h6>
+                <div class="row">
+                  <div class="input-field  center col s12 m12 l6">
+                    <a class="waves-effect waves-light btn-large grey darken-4" href="/auth/github" >
+                      <i class="material-icons left">
+                          <img src="/images/Github-Mark.png" alt="github-icon" class="button-image">
+                      </i>
+                      Github
+                    </a>
+                  </div>
+                  <div class="input-field  center col s12 m12 l6 ">
+                    <a class="waves-effect waves-light btn-large indigo darken-1" href="/auth/linkedin">
+                      <i class="material-icons left">
+                        <img src="/images/Linked-in-logo.png" class="linkedin-image" alt="linkedin-icon" >
+                      </i>
+                      LinkedIn
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>   
+    </div>
+</div>
+
+<% include ./partials/footer %>
