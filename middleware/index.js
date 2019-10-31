@@ -1,7 +1,8 @@
 const express = require("express");
       path    = require("path"),
-      compression= require("compression");
-      flash  = require("connect-flash");
+      compression= require("compression"),
+      flash  = require("connect-flash"),
+      passportSetup = require("./passport/passportSetup");
 
 module.exports=app=>{
     app.use(compression({ filter: shouldCompress }))
@@ -15,15 +16,15 @@ module.exports=app=>{
         return compression.filter(req, res)
     }
 
-    // passportSetup(app);
+    passportSetup(app);
     
-    // app.use(flash());
-    // app.use(async function(req,res,next){
-    //     res.locals.currentUser = req.user;
-    //     res.locals.error  =  req.flash("error");
-    //     res.locals.success  =  req.flash("success");
-    //     next();
-    //  });
+    app.use(flash());
+    app.use(async function(req,res,next){
+        res.locals.currentUser = req.user;
+        res.locals.error  =  req.flash("error");
+        res.locals.success  =  req.flash("success");
+        next();
+     });
 
     app.use(express.static(path.join(__dirname,"../public")));
     app.use(express.static(path.join(__dirname,"../node_modules/materialize-css/dist")));
